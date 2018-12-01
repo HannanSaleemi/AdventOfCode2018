@@ -1,17 +1,12 @@
-# -*- coding: utf-8 -*-
+import itertools
+frequencies = [int(num) for num in open("input.txt").readlines()]
+print("Sum: " + sum(frequencies))
 
-# Beginning Frequency
-frequency = 0
-
-# Open the file
-with open("input.txt") as file:
-    # Read all lines from file
-    data = file.readlines()
-
-    # For each line add/subract for freq
-    for line in data:
-        words = line.split()
-        frequency += int(words[0])
-
-print("FINAL FREQUENCY: {}".format(frequency))
-
+frequnecies = 0
+frequencies_seen = set([0])
+for num in itertools.cycle(data):
+    frequnecies += num
+    if frequnecies in frequencies_seen:
+        print("First Duplicate: " + frequnecies)
+        break
+    frequencies_seen.add(freq)
